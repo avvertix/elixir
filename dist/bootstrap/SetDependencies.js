@@ -1,10 +1,12 @@
 'use strict';
 
-var _gulpUtil = require('gulp-util');
+var _minimist = require('minimist');
 
-var _gulpUtil2 = _interopRequireDefault(_gulpUtil);
+var _minimist2 = _interopRequireDefault(_minimist);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var env = (0, _minimist2.default)(process.argv.slice(2));
 
 /**
  * This object stores all of the various Elixir tasks.
@@ -16,7 +18,7 @@ Elixir.mixins = {};
 /**
  * Determine if Elixir is in "production" mode.
  */
-if (Elixir.inProduction = _gulpUtil2.default.env.production) {
+if (Elixir.inProduction = env.production) {
   process.env.NODE_ENV = 'production';
 }
 
@@ -24,7 +26,7 @@ if (Elixir.inProduction = _gulpUtil2.default.env.production) {
  * Determine if 'gulp watch' is being run.
  */
 Elixir.isWatching = function () {
-  return _gulpUtil2.default.env._.indexOf('watch') > -1;
+  return env._.indexOf('watch') > -1;
 };
 
 /**

@@ -12,9 +12,9 @@
  */
 
 Elixir.extend('task', function (name, watcher) {
-  var task = new Elixir.Task('task', function () {
-    return gulp.start(name);
-  });
+    var task = new Elixir.Task('task', function () {
+        return gulp.start(name);
+    });
 
-  watcher && task.watch(watcher);
+    watcher && task.watch(watcher);
 });

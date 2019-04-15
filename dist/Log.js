@@ -6,10 +6,6 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _gulpUtil = require('gulp-util');
-
-var _gulpUtil2 = _interopRequireDefault(_gulpUtil);
-
 var _MinimalTaskReporter = require('./reporters/MinimalTaskReporter');
 
 var _MinimalTaskReporter2 = _interopRequireDefault(_MinimalTaskReporter);
@@ -18,9 +14,19 @@ var _TaskReporter = require('./reporters/TaskReporter');
 
 var _TaskReporter2 = _interopRequireDefault(_TaskReporter);
 
+var _minimist = require('minimist');
+
+var _minimist2 = _interopRequireDefault(_minimist);
+
+var _chalk = require('chalk');
+
+var _chalk2 = _interopRequireDefault(_chalk);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var env = (0, _minimist2.default)(process.argv.slice(2));
 
 var Log = function () {
 
@@ -30,7 +36,7 @@ var Log = function () {
     function Log() {
         _classCallCheck(this, Log);
 
-        this.minimal = _gulpUtil2.default.env.minimal;
+        this.minimal = env.minimal;
     }
 
     /**
@@ -44,7 +50,7 @@ var Log = function () {
     _createClass(Log, [{
         key: 'heading',
         value: function heading(_heading) {
-            return this.break().message(_gulpUtil2.default.colors.black(_gulpUtil2.default.colors.bgGreen(_heading)));
+            return this.break().message(_chalk2.default.black(_chalk2.default.bgGreen(_heading)));
         }
     }, {
         key: 'task',
@@ -131,7 +137,7 @@ var Log = function () {
     }, {
         key: 'error',
         value: function error(message) {
-            this.break().message(_gulpUtil2.default.colors.bgRed(message));
+            this.break().message(_chalk2.default.bgRed(message));
 
             return this;
         }

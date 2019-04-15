@@ -8,13 +8,15 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _underscore = require('underscore');
 
-var _gulpUtil = require('gulp-util');
+var _minimist = require('minimist');
 
-var _gulpUtil2 = _interopRequireDefault(_gulpUtil);
+var _minimist2 = _interopRequireDefault(_minimist);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var env = (0, _minimist2.default)(process.argv.slice(2));
 
 var GulpBuilder = function () {
 
@@ -76,7 +78,7 @@ var GulpBuilder = function () {
     }, {
         key: 'shouldRunAllTasksNamed',
         value: function shouldRunAllTasksNamed(name) {
-            return (0, _underscore.intersection)(_gulpUtil2.default.env._, [name, 'watch', 'tdd']).length;
+            return (0, _underscore.intersection)(env._, [name, 'watch', 'tdd']).length;
         }
     }], [{
         key: 'fromElixirTask',

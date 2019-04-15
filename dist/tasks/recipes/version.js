@@ -18,7 +18,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  */
 
 Elixir.extend('version', function (src, buildPath) {
-  new _VersionTask2.default('version', getPaths(src, buildPath));
+    new _VersionTask2.default('version', getPaths(src, buildPath));
 });
 
 /**
@@ -29,8 +29,8 @@ Elixir.extend('version', function (src, buildPath) {
  * @return {GulpPaths}
  */
 function getPaths(src, buildPath) {
-  src = Array.isArray(src) ? src : [src];
-  buildPath = buildPath || Elixir.config.get('public.versioning.buildFolder');
+    src = Array.isArray(src) ? src : [src];
+    buildPath = buildPath || Elixir.config.get('public.versioning.buildFolder');
 
-  return new Elixir.GulpPaths().src(src, Elixir.config.publicPath).output(buildPath);
+    return new Elixir.GulpPaths().src(src, Elixir.config.publicPath).output(buildPath);
 };

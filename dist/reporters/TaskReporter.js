@@ -10,9 +10,9 @@ var _fs = require('fs');
 
 var _fs2 = _interopRequireDefault(_fs);
 
-var _gulpUtil = require('gulp-util');
+var _chalk = require('chalk');
 
-var _gulpUtil2 = _interopRequireDefault(_gulpUtil);
+var _chalk2 = _interopRequireDefault(_chalk);
 
 var _cliTable = require('cli-table');
 
@@ -112,10 +112,10 @@ var TaskReporter = function () {
         key: 'colorize',
         value: function colorize(file) {
             if (this.fileExists(file)) {
-                return _gulpUtil2.default.colors.green(file);
+                return _chalk2.default.green(file);
             }
 
-            return _gulpUtil2.default.colors.bgRed(file);
+            return _chalk2.default.bgRed(file);
         }
 
         /**

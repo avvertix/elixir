@@ -14,9 +14,9 @@ var _fs = require('fs');
 
 var _fs2 = _interopRequireDefault(_fs);
 
-var _gulpUtil = require('gulp-util');
+var _replaceExt = require('replace-ext');
 
-var _gulpUtil2 = _interopRequireDefault(_gulpUtil);
+var _replaceExt2 = _interopRequireDefault(_replaceExt);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -111,7 +111,7 @@ var GulpPaths = function () {
     }, {
         key: 'changeExtension',
         value: function changeExtension(path, newExtension) {
-            return _gulpUtil2.default.replaceExtension(path, newExtension);
+            return (0, _replaceExt2.default)(path, newExtension);
         }
 
         /**

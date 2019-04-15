@@ -1,7 +1,7 @@
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 
 var _path = require('path');
@@ -23,369 +23,369 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var config = {
 
-  /*
-   |----------------------------------------------------------------
-   | Production Mode
-   |----------------------------------------------------------------
-   |
-   | Elixir will trigger certain actions, dependent upon this flag.
-   | You may enable this mode by triggering "gulp --production",
-   | enabling things like CSS and JS minification. EasyPeasy!
-   |
-   */
-
-  production: Elixir.inProduction,
-
-  /*
-   |----------------------------------------------------------------
-   | Assets Path
-   |----------------------------------------------------------------
-   |
-   | This assets path property is prefixed to all relevant assets
-   | in your application. For example, "resources/assets/sass"
-   | or "resources/assets/coffee." Change this if you must.
-   |
-   */
-
-  assetsPath: 'resources/assets',
-
-  /*
-   |----------------------------------------------------------------
-   | Public Path
-   |----------------------------------------------------------------
-   |
-   | Much like assets path, this public path property is prefixed to
-   | any paths in your application, that point to the public dir.
-   | It's useful, when a server requires a unique public path.
-   |
-   */
-
-  publicPath: 'public',
-
-  /*
-   |----------------------------------------------------------------
-   | App Path
-   |----------------------------------------------------------------
-   |
-   | The app path, you guessed it, specifies the path to the app
-   | folder in your project. If using Laravel, then you won't
-   | need to modify this path. Otherwise modify as needed.
-   |
-   */
-
-  appPath: 'app',
-
-  /*
-   |----------------------------------------------------------------
-   | View Path
-   |----------------------------------------------------------------
-   |
-   | Very likely, you will never need/want to modify this property.
-   | However, for the instances where your app's views directory
-   | is located in a different spot, please modify as needed.
-   |
-   */
-
-  viewPath: 'resources/views',
-
-  /*
-   |----------------------------------------------------------------
-   | Notifications
-   |----------------------------------------------------------------
-   |
-   | As a convenience, Elixir will, when available, automatically
-   | display OS notifications upon the completion of any task.
-   | But of course you're free to disable this, if needed.
-   |
-   */
-
-  notifications: true,
-
-  /*
-   |----------------------------------------------------------------
-   | Log Muted
-   |----------------------------------------------------------------
-   |
-   | As a convenience, Elixir will, when available, automatically
-   | display OS log upon the completion of any task.
-   | But of course you're free to disable this, if needed.
-   |
-   */
-
-  muted: process.argv[1].indexOf('bin/_mocha') > -1,
-
-  /*
-   |----------------------------------------------------------------
-   | Sourcemaps
-   |----------------------------------------------------------------
-   |
-   | A sourcemap is a JSON mapping, which declares a relationship
-   | between a minified file and its original source location.
-   | Quite useful for debugging, it's turned on by default.
-   |
-   */
-
-  sourcemaps: !Elixir.inProduction,
-
-  /*
-   |----------------------------------------------------------------
-   | File System Event Batching
-   |----------------------------------------------------------------
-   |
-   | You likely won't need to modify this object. That said, should
-   | you need to, these settings are exclusive to the watch task.
-   | They set the limit and timeout for running batch-updates.
-   |
-   */
-
-  batchOptions: {
-    // https://github.com/floatdrop/gulp-batch#batchoptions-callback-errorhandler
-    limit: undefined,
-    timeout: 1000
-  },
-
-  css: {
-
     /*
      |----------------------------------------------------------------
-     | CSS Source Folder
+     | Production Mode
      |----------------------------------------------------------------
      |
-     | This property declares the root folder for all vanilla CSS
-     | files. Note that this is the folder name, not the path.
-     | We'll stick with a general "css" name - makes sense.
+     | Elixir will trigger certain actions, dependent upon this flag.
+     | You may enable this mode by triggering "gulp --production",
+     | enabling things like CSS and JS minification. EasyPeasy!
      |
      */
 
-    folder: 'css',
+    production: Elixir.inProduction,
 
     /*
      |----------------------------------------------------------------
-     | CSS Output Folder
+     | Assets Path
      |----------------------------------------------------------------
      |
-     | Generally, your source files will be stored outside of your
-     | public directory, and then compiled/merged as necessary.
-     | This property represents the public specific folder.
+     | This assets path property is prefixed to all relevant assets
+     | in your application. For example, "resources/assets/sass"
+     | or "resources/assets/coffee." Change this if you must.
      |
      */
 
-    outputFolder: 'css',
+    assetsPath: 'resources/assets',
 
     /*
      |----------------------------------------------------------------
-     | CSS3 Autoprefixing
+     | Public Path
      |----------------------------------------------------------------
      |
-     | When working with any form of CSS, Elixir automatically runs
-     | your file through a CSS autoprefixer, which automatically
-     | adds or removes vendor-specific CSS3 prefixes. Useful!
+     | Much like assets path, this public path property is prefixed to
+     | any paths in your application, that point to the public dir.
+     | It's useful, when a server requires a unique public path.
      |
      */
 
-    autoprefix: {
-      enabled: true,
+    publicPath: 'public',
 
-      // https://www.npmjs.com/package/gulp-autoprefixer#api
-      options: {
-        browsers: ['> 1%'],
-        cascade: false
-      }
+    /*
+     |----------------------------------------------------------------
+     | App Path
+     |----------------------------------------------------------------
+     |
+     | The app path, you guessed it, specifies the path to the app
+     | folder in your project. If using Laravel, then you won't
+     | need to modify this path. Otherwise modify as needed.
+     |
+     */
+
+    appPath: 'app',
+
+    /*
+     |----------------------------------------------------------------
+     | View Path
+     |----------------------------------------------------------------
+     |
+     | Very likely, you will never need/want to modify this property.
+     | However, for the instances where your app's views directory
+     | is located in a different spot, please modify as needed.
+     |
+     */
+
+    viewPath: 'resources/views',
+
+    /*
+     |----------------------------------------------------------------
+     | Notifications
+     |----------------------------------------------------------------
+     |
+     | As a convenience, Elixir will, when available, automatically
+     | display OS notifications upon the completion of any task.
+     | But of course you're free to disable this, if needed.
+     |
+     */
+
+    notifications: true,
+
+    /*
+     |----------------------------------------------------------------
+     | Log Muted
+     |----------------------------------------------------------------
+     |
+     | As a convenience, Elixir will, when available, automatically
+     | display OS log upon the completion of any task.
+     | But of course you're free to disable this, if needed.
+     |
+     */
+
+    muted: process.argv[1].indexOf('bin/_mocha') > -1,
+
+    /*
+     |----------------------------------------------------------------
+     | Sourcemaps
+     |----------------------------------------------------------------
+     |
+     | A sourcemap is a JSON mapping, which declares a relationship
+     | between a minified file and its original source location.
+     | Quite useful for debugging, it's turned on by default.
+     |
+     */
+
+    sourcemaps: !Elixir.inProduction,
+
+    /*
+     |----------------------------------------------------------------
+     | File System Event Batching
+     |----------------------------------------------------------------
+     |
+     | You likely won't need to modify this object. That said, should
+     | you need to, these settings are exclusive to the watch task.
+     | They set the limit and timeout for running batch-updates.
+     |
+     */
+
+    batchOptions: {
+        // https://github.com/floatdrop/gulp-batch#batchoptions-callback-errorhandler
+        limit: undefined,
+        timeout: 1000
     },
 
-    /*
-     |----------------------------------------------------------------
-     | CSS3 Minification
-     |----------------------------------------------------------------
-     |
-     | When running Gulp with the production flag, any CSS will
-     | automatically be minified. This offers the benefit of
-     | reduced file sizes. Adjust any plugin option here.
-     |
-     */
+    css: {
 
-    minifier: {
-      // https://github.com/jakubpawlowicz/clean-css#how-to-use-clean-css-api
-      pluginOptions: {}
-    },
+        /*
+         |----------------------------------------------------------------
+         | CSS Source Folder
+         |----------------------------------------------------------------
+         |
+         | This property declares the root folder for all vanilla CSS
+         | files. Note that this is the folder name, not the path.
+         | We'll stick with a general "css" name - makes sense.
+         |
+         */
 
-    /*
-     |----------------------------------------------------------------
-     | Sass Compilation
-     |----------------------------------------------------------------
-     |
-     | Gone are the days of researching how to call Sass on a given
-     | folder. Simply run `mix.sass('file.scss')` and you're all
-     | set. This object sets the folder name and plugin opts.
-     |
-     */
+        folder: 'css',
 
-    sass: {
-      folder: 'sass',
+        /*
+         |----------------------------------------------------------------
+         | CSS Output Folder
+         |----------------------------------------------------------------
+         |
+         | Generally, your source files will be stored outside of your
+         | public directory, and then compiled/merged as necessary.
+         | This property represents the public specific folder.
+         |
+         */
 
-      search: '/**/*.+(sass|scss)',
+        outputFolder: 'css',
 
-      // https://github.com/sass/node-sass#options
-      pluginOptions: {
-        outputStyle: 'expanded',
-        precision: 10
-      }
-    },
+        /*
+         |----------------------------------------------------------------
+         | CSS3 Autoprefixing
+         |----------------------------------------------------------------
+         |
+         | When working with any form of CSS, Elixir automatically runs
+         | your file through a CSS autoprefixer, which automatically
+         | adds or removes vendor-specific CSS3 prefixes. Useful!
+         |
+         */
 
-    /*
-     |----------------------------------------------------------------
-     | Less Compilation
-     |----------------------------------------------------------------
-     |
-     | Gone are the days of researching how to call Less on a given
-     | folder. Simply run `mix.less('file.less')` and you're all
-     | set. This object sets the folder name and plugin opts.
-     |
-     */
+        autoprefix: {
+            enabled: true,
 
-    less: {
-      folder: 'less',
+            // https://www.npmjs.com/package/gulp-autoprefixer#api
+            options: {
+                browsers: ['> 1%'],
+                cascade: false
+            }
+        },
 
-      search: '/**/*.less',
+        /*
+         |----------------------------------------------------------------
+         | CSS3 Minification
+         |----------------------------------------------------------------
+         |
+         | When running Gulp with the production flag, any CSS will
+         | automatically be minified. This offers the benefit of
+         | reduced file sizes. Adjust any plugin option here.
+         |
+         */
 
-      // https://github.com/plus3network/gulp-less#options
-      pluginOptions: {}
-    }
-  },
+        minifier: {
+            // https://github.com/jakubpawlowicz/clean-css#how-to-use-clean-css-api
+            pluginOptions: {}
+        },
 
-  js: {
+        /*
+         |----------------------------------------------------------------
+         | Sass Compilation
+         |----------------------------------------------------------------
+         |
+         | Gone are the days of researching how to call Sass on a given
+         | folder. Simply run `mix.sass('file.scss')` and you're all
+         | set. This object sets the folder name and plugin opts.
+         |
+         */
 
-    /*
-     |----------------------------------------------------------------
-     | JavaScript Source Folder
-     |----------------------------------------------------------------
-     |
-     | Much like the CSS folder option above, this property sets the
-     | name of the folder, not the full path, for your JavaScript
-     | source files. It then gets affixed to the "assetsPath".
-     |
-     */
+        sass: {
+            folder: 'sass',
 
-    folder: 'js',
+            search: '/**/*.+(sass|scss)',
 
-    /*
-     |----------------------------------------------------------------
-     | JavaScript Output Folder
-     |----------------------------------------------------------------
-     |
-     | Once your vanilla JavaScript files have been compiled/merged,
-     | they will be saved to your public directory. This property
-     | represents the name of the folder within that location.
-     |
-     */
+            // https://github.com/sass/node-sass#options
+            pluginOptions: {
+                outputStyle: 'expanded',
+                precision: 10
+            }
+        },
 
-    outputFolder: 'js',
+        /*
+         |----------------------------------------------------------------
+         | Less Compilation
+         |----------------------------------------------------------------
+         |
+         | Gone are the days of researching how to call Less on a given
+         | folder. Simply run `mix.less('file.less')` and you're all
+         | set. This object sets the folder name and plugin opts.
+         |
+         */
 
-    /*
-     |----------------------------------------------------------------
-     | UglifyJS Parser/Compressor/Beautifier
-     |----------------------------------------------------------------
-     |
-     | UglifyJS is a JavaScript parser/compressor/beautifier.
-     | It'll minify your JavaScript with ease and has an option to
-     | mangle your code.
-     |
-     */
+        less: {
+            folder: 'less',
 
-    uglify: {
-      options: {
-        compress: {
-          warnings: false
+            search: '/**/*.less',
+
+            // https://github.com/plus3network/gulp-less#options
+            pluginOptions: {}
         }
-      }
-    }
-  },
+    },
 
-  testing: {
+    js: {
 
-    /*
-     |----------------------------------------------------------------
-     | PHPUnit Autotesting
-     |----------------------------------------------------------------
-     |
-     | Want to automatically trigger your PHPUnit tests. Not a problem.
-     | This object stores your default PHPUnit directory path. For a
-     | custom command, you may use the second arg to mix.phpUnit.
-     |
-     */
+        /*
+         |----------------------------------------------------------------
+         | JavaScript Source Folder
+         |----------------------------------------------------------------
+         |
+         | Much like the CSS folder option above, this property sets the
+         | name of the folder, not the full path, for your JavaScript
+         | source files. It then gets affixed to the "assetsPath".
+         |
+         */
 
-    phpUnit: {
-      path: 'tests',
-      search: '/**/*Test.php',
-      command: _path2.default.normalize('vendor/bin/phpunit') + ' --verbose'
+        folder: 'js',
+
+        /*
+         |----------------------------------------------------------------
+         | JavaScript Output Folder
+         |----------------------------------------------------------------
+         |
+         | Once your vanilla JavaScript files have been compiled/merged,
+         | they will be saved to your public directory. This property
+         | represents the name of the folder within that location.
+         |
+         */
+
+        outputFolder: 'js',
+
+        /*
+         |----------------------------------------------------------------
+         | UglifyJS Parser/Compressor/Beautifier
+         |----------------------------------------------------------------
+         |
+         | UglifyJS is a JavaScript parser/compressor/beautifier.
+         | It'll minify your JavaScript with ease and has an option to
+         | mangle your code.
+         |
+         */
+
+        uglify: {
+            options: {
+                compress: {
+                    warnings: false
+                }
+            }
+        }
+    },
+
+    testing: {
+
+        /*
+         |----------------------------------------------------------------
+         | PHPUnit Autotesting
+         |----------------------------------------------------------------
+         |
+         | Want to automatically trigger your PHPUnit tests. Not a problem.
+         | This object stores your default PHPUnit directory path. For a
+         | custom command, you may use the second arg to mix.phpUnit.
+         |
+         */
+
+        phpUnit: {
+            path: 'tests',
+            search: '/**/*Test.php',
+            command: _path2.default.normalize('vendor/bin/phpunit') + ' --verbose'
+        },
+
+        /*
+         |----------------------------------------------------------------
+         | PHPSpec Autotesting
+         |----------------------------------------------------------------
+         |
+         | Want to automatically trigger your PHPSpec tests. Not a problem.
+         | This object stores your default PHPSpec directory path. For a
+         | custom command, you may use the second arg to mix.phpSpec.
+         |
+         */
+
+        phpSpec: {
+            path: 'spec',
+            search: '/**/*Spec.php',
+            command: _path2.default.normalize('vendor/bin/phpspec') + ' run'
+        }
     },
 
     /*
      |----------------------------------------------------------------
-     | PHPSpec Autotesting
+     | File Versioning
      |----------------------------------------------------------------
      |
-     | Want to automatically trigger your PHPSpec tests. Not a problem.
-     | This object stores your default PHPSpec directory path. For a
-     | custom command, you may use the second arg to mix.phpSpec.
+     | If you use aggressive assets caching on your server, then you
+     | will need a way to cachebust, right? No querystring needed
+     | this time. Here you may set the default "build" folder.
      |
      */
 
-    phpSpec: {
-      path: 'spec',
-      search: '/**/*Spec.php',
-      command: _path2.default.normalize('vendor/bin/phpspec') + ' run'
+    versioning: {
+        buildFolder: 'build'
+    },
+
+    /*
+     |----------------------------------------------------------------
+     | Browsersync
+     |----------------------------------------------------------------
+     |
+     | Want to have your browser refresh instantly upon changing a bit
+     | of Sass or modifying a view? With Elixir, it has never been
+     | easier. This contains default options for the extension.
+     |
+     */
+
+    browserSync: {
+        // http://www.browsersync.io/docs/options/
+        proxy: 'homestead.app',
+        reloadOnRestart: true,
+        notify: true
+    },
+
+    /*
+     |----------------------------------------------------------------
+     | Watch
+     |----------------------------------------------------------------
+     |
+     | Configure how your filesystem is monitored for changes. This
+     | modifies the behavior of any task using "watch."
+     |
+     */
+
+    watch: {
+        // https://www.npmjs.com/package/gulp-watch/#options
+        interval: 1000,
+        usePolling: true
     }
-  },
-
-  /*
-   |----------------------------------------------------------------
-   | File Versioning
-   |----------------------------------------------------------------
-   |
-   | If you use aggressive assets caching on your server, then you
-   | will need a way to cachebust, right? No querystring needed
-   | this time. Here you may set the default "build" folder.
-   |
-   */
-
-  versioning: {
-    buildFolder: 'build'
-  },
-
-  /*
-   |----------------------------------------------------------------
-   | Browsersync
-   |----------------------------------------------------------------
-   |
-   | Want to have your browser refresh instantly upon changing a bit
-   | of Sass or modifying a view? With Elixir, it has never been
-   | easier. This contains default options for the extension.
-   |
-   */
-
-  browserSync: {
-    // http://www.browsersync.io/docs/options/
-    proxy: 'homestead.app',
-    reloadOnRestart: true,
-    notify: true
-  },
-
-  /*
-   |----------------------------------------------------------------
-   | Watch
-   |----------------------------------------------------------------
-   |
-   | Configure how your filesystem is monitored for changes. This
-   | modifies the behavior of any task using "watch."
-   |
-   */
-
-  watch: {
-    // https://www.npmjs.com/package/gulp-watch/#options
-    interval: 1000,
-    usePolling: true
-  }
 };
 
 /**
@@ -395,24 +395,24 @@ var config = {
  * @return {string}
  */
 config.get = function (path) {
-  var basePath;
-  var current = config;
+    var basePath;
+    var current = config;
 
-  var segments = path.split('.');
+    var segments = path.split('.');
 
-  // If the path begins with "assets" or "public," then
-  // we can assume that the user wants to prefix the
-  // given base url to their config path. Useful!
+    // If the path begins with "assets" or "public," then
+    // we can assume that the user wants to prefix the
+    // given base url to their config path. Useful!
 
-  if (segments[0] == 'assets' || segments[0] == 'public') {
-    basePath = config[segments.shift() + 'Path'];
-  }
+    if (segments[0] == 'assets' || segments[0] == 'public') {
+        basePath = config[segments.shift() + 'Path'];
+    }
 
-  segments.forEach(function (segment) {
-    return current = current[segment];
-  });
+    segments.forEach(function (segment) {
+        return current = current[segment];
+    });
 
-  return _path2.default.join(basePath, current);
+    return _path2.default.join(basePath, current);
 };
 
 exports.default = config;

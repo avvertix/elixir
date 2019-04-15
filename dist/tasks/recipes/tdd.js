@@ -12,22 +12,22 @@
  */
 
 gulp.task('tdd', function () {
-  Elixir.log.message('Watching for tests...');
+    Elixir.log.message('Watching for tests...');
 
-  runAllTasks();
+    runAllTasks();
 
-  Elixir.tasks.filter(function (task) {
-    return task.category == 'tdd';
-  }).forEach(function (task) {
-    return gulp.watch(task.watchers, [task.name]);
-  });
+    Elixir.tasks.filter(function (task) {
+        return task.category == 'tdd';
+    }).forEach(function (task) {
+        return gulp.watch(task.watchers, [task.name]);
+    });
 });
 
 /**
  * Trigger all registered tasks.
  */
 function runAllTasks() {
-  gulp.start('default');
+    gulp.start('default');
 
-  Elixir.isRunningAllTasks = false;
+    Elixir.isRunningAllTasks = false;
 }
