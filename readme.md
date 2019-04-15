@@ -1,5 +1,9 @@
 # Laravel Elixir
 
+
+> **This is a fork of [Laravel Elixir](https://github.com/laravel/elixir) to make sure an old project keeps building**. This fork changes some dependencies of the project. If you are using Laravel please use [Laravel Mix](https://github.com/JeffreyWay/laravel-mix).
+
+
 ## Introduction
 
 Laravel Elixir provides a clean, fluent API for defining basic Gulp tasks for your Laravel application. Elixir supports several common CSS and JavaScript pre-processors, and even testing tools.
